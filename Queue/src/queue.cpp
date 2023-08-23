@@ -7,6 +7,15 @@ template<typename T, int N> class Queue {
 public:
     Queue() : front(0), rear(-1), count(0) {}
 
+    Queue(const std::array<T, N>& arr) : front(0), rear(-1), count(0) {
+        if (arr.size() > N) {
+            throw std::overflow_error("Input array is too large");
+        }
+        for (const T& element : arr) {
+            enQueue(element);
+        }
+    }
+
     bool isFull() {
         return count == N;
     }
@@ -62,18 +71,3 @@ private:
     int rear;
     int count;
 };
-
-int main() {
-    Queue<int, 10> myQueue; 
-
-    myQueue.enQueue(1);
-    myQueue.enQueue(2);
-    myQueue.enQueue(3);
-    myQueue.enQueue(4);
-    myQueue.enQueue(5);
-
-    myQueue.printQueue();
-
-    return 0;
-}
-

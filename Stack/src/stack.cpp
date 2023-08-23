@@ -58,32 +58,3 @@ private:
     std::vector <T> dynamicStack;
     std::array <T, N> plainStack;
 };
-
-
-int main() {
-    
-    Stack<char> stackVector;
-
-    Stack<int, 10> stackArray;
-
-    stackVector.push('a');
-    stackVector.push('b');
-    stackVector.push('c');
-
-    while (!stackVector.isEmpty()) {
-        std::cout << stackVector.pop() << " ";
-    }
-    std::cout << '\n';
-
-    stackArray.push(1);
-    stackArray.push(2);
-    stackArray.push(3);
-
-    while (!stackArray.isEmpty()) {
-        std::cout << stackArray.pop() << " ";
-    }
-    std::cout << '\n';
-
-    return 0;
-}
-
