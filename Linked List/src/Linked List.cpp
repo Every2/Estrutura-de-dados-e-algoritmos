@@ -131,47 +131,5 @@ private:
     std::shared_ptr<Node<T>> head;
 };
 
-int main() {
-    LinkedList<int> myList;
 
-    myList.insertAtEnd(1);
-    myList.insertAtEnd(3);
-    myList.insertAtEnd(5);
-
-    std::cout << "Original list: " << '\n';
-    myList.printList(); 
-
-    myList.insertAtBeginning(0);
-    myList.insertAtBeginning(-1);
-
-    std::cout << "List after insertAtBeginning: " << '\n';
-    myList.printList(); 
-
-    std::shared_ptr<Node<int>> node1 = myList.getNodeWithValue(1);
-    if (node1) {
-        myList.insertAfter(node1, 2);
-    }
-
-    std::cout << "List after 1 inserted: " << '\n';
-    myList.printList(); 
-
-    myList.deleteNode(2);
-
-    std::cout << "List after 2 deleted: " << '\n';
-    myList.printList(); 
-    
-    int searchValue = 3;
-    if (myList.searchNode(searchValue)) {
-        std::cout << "The value " << searchValue << " is in the list" << '\n';
-    } else {
-        std::cout << "The value " << searchValue << " isn't in the list" << '\n';
-    }
-
-    myList.sortLinkedList();
-
-    std::cout << "List after sort: " << '\n';
-    myList.printList(); 
-
-    return 0;
-}
 
