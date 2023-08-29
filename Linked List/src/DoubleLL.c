@@ -89,28 +89,3 @@ void printList(nodetype* node) {
         printf("NULL\n");
 }
 
-int main() {
-    // initialize an empty node
-    nodetype* head = NULL;
-
-    insertEnd(&head, 5);
-    insertFront(&head, 1);
-    insertFront(&head, 6);
-    insertEnd(&head, 9);
-    insertEnd(&head, 10);
-
-    // insert 11 after head
-    insertAfter(head, 11);
-
-    // insert 15 after the second node
-    insertAfter(head->next, 15);
-
-    printList(head);
-
-    // delete the last node
-    deleteNode(&head, head->next->next->next->next);
-
-    printList(head);
-
-    return 0;
-}
