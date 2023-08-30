@@ -88,4 +88,3 @@ void printList(nodetype* node) {
     if (node == NULL)
         printf("NULL\n");
 }
-
