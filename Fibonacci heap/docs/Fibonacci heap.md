@@ -1,19 +1,19 @@
 # Fibonacci Heap
 
-A Fibonacci Heap is a priority queue data structure that provides efficient amortized average time for operations like insertion, minimum extraction, and key decrease. It is one of the most efficient data structures for solving algorithms such as Dijkstra's algorithm and Prim's algorithm.
+Um Heap de Fibonacci é uma estrutura de dados de fila de prioridade que oferece um tempo médio amortizado eficiente para operações como inserção, extração do mínimo e diminuição da chave. É uma das estruturas de dados mais eficientes para resolver algoritmos como o algoritmo de Dijkstra e o algoritmo de Prim.
 
 ## Overview
 
-The Fibonacci Heap is a collection of trees (sub-heaps) that satisfy some essential properties:
+O Heap de Fibonacci é uma coleção de árvores (sub-heaps) que satisfazem algumas propriedades essenciais::
 
-1. Each tree is a binomial tree.
-2. There are no two binomial trees in the collection with the same degree (number of children).
-3. The root of each binomial tree has a value less than or equal to the values of its children.
-4. There is at most one binomial tree of each degree at any given time.
+1. Cada árvore é uma árvore binomial.
+2. Não existem duas árvores binomiais na coleção com o mesmo grau (número de filhos)..
+3. A raiz de cada árvore binomial possui um valor menor ou igual aos valores de seus filhos.
+4. Há no máximo uma árvore binomial de cada grau em um determinado momento.
 
-The Fibonacci Heap data structure supports the following core operations:
+A estrutura de dados do Heap de Fibonacci suporta as seguintes operações principais::
 
-- **Insertion**: Adding an element to the priority queue.
-- **Minimum Extraction**: Removing and returning the element with the minimum value in the priority queue.
-- **Key Decrease**: Decreasing the value of a specific element in the priority queue.
-- **Deletion**: Removing a specific element from the priority queue.
+- **Inserção**: Adicionar um elemento à fila de prioridade.
+- **Extração do Mínimo**: Remover e retornar o elemento com o valor mínimo na fila de prioridade.
+- **Key Decrease**: Diminuir o valor de um elemento específico na fila de prioridade.
+- **Exclusão**: Remover um elemento específico da fila de prioridade.
