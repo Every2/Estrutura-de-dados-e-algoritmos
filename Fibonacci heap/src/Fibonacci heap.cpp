@@ -240,17 +240,17 @@ public:
     int decreaseKey(std::shared_ptr<Node> heap_root, int x, int new_key) {
         std::shared_ptr<Node> parent_node;
         if (heap_root == nullptr) {
-            std::cout << "A Heap está Vazia" << '\n';
+            std::cout << "The Heap is Empty" << '\n';
             return 0;
         }
         std::shared_ptr<Node> found_node = find(heap_root, x);
         if (found_node == nullptr) {
-            std::cout << "Nó não encontrado na Heap" << '\n';
+            std::cout << "Node not found" << '\n';
             return 1;
         }
 
         if (found_node->key < new_key) {
-            std::cout << "Chave inserida é maior que a chave atual" << '\n';
+            std::cout << "inserted key is greater than current key" << '\n';
             return 0;
         }
         found_node->key = new_key;
@@ -273,9 +273,9 @@ public:
         if (!t)
             node_pointer = extractMin(heap_root);
         if (node_pointer != nullptr)
-            std::cout << "Chave Deletada" << '\n';
+            std::cout << "key deleted" << '\n';
         else
-            std::cout << "Chave não Deletada" << '\n';
+            std::cout << "key not deleted" << '\n';
         return 0;
     }
 
