@@ -1,7 +1,5 @@
 # Árvore Binária Completa (Complete Binary Tree)
 
-## Visão Geral
-
 Uma **Árvore Binária Completa** é um tipo especial de árvore binária onde todos os níveis da árvore estão completamente preenchidos, exceto possivelmente o último nível, que é preenchido da esquerda para a direita. Isso significa que todos os nós, exceto os da camada mais profunda, têm exatamente dois filhos.
 
 ## Propriedades
