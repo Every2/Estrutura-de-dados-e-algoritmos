@@ -104,6 +104,27 @@ bool search(Btree* root, int key) {
     }
 }
 
+void delete(Btree** root, int key) {
+    if (*root == NULL) {
+        return;
+    }
+    int i = 0;
+    while (i < (*root)->numKeys && key > (*root)->keys[i]) {
+        i++;
+    }
+
+    if (i < (*root)->numKeys && key == (*root)->keys[i]) {
+        for (int j = i; j < (*root)->numKeys - 1; j++) {
+            (*root)->keys[j] = (*root)->keys[j + 1];
+        }
+        (*root)->numKeys--;
+
+        if (!(*root)->isLeaf) {
+            delete(&(*root)->childPointers[i], key);
+        }
+    }
+}
+
 void inOrderTraversal(Btree* root) {
     if (root != NULL) {
         for (int i = 0; i < root->numKeys; i++) {

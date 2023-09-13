@@ -108,6 +108,25 @@ private:
         }
     }
 
+    void deleteKey(std::shared_ptr<BTreeNode<T>>& node, const T& key) {
+        if (!node) {
+            return;
+        }
+        int i {0};
+        while (i < node->keys.size() && key > node->keys.at(i)) {
+            i++;
+        }
+
+        if (i < node->keys.size() && key == node->keys.at(i)) {
+            node->keys.erase(node->keys.begin() + i);
+        }
+        else {
+            if (!node->is_leaf) {
+                deleteKey(node->children.at(i), key);
+            }
+        }
+    }
+
     void inOrderTraversal(const std::shared_ptr<BTreeNode<T>>& node) {
         if (node) {
             int i {0};
