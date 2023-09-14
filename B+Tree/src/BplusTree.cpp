@@ -555,26 +555,3 @@ public:
         return insertIntoLeafAfterSplitting(root, leaf, key, pointer);
     }
 };
-
-int main() {
-    BPlusTree tree;
-    Node* root = nullptr;
-
-    root = tree.insert(root, 3, 300);
-    root = tree.insert(root, 1, 100);
-    root = tree.insert(root, 7, 700);
-    root = tree.insert(root, 2, 200);
-    root = tree.insert(root, 5, 500);
-    root = tree.insert(root, 4, 400);
-    root = tree.insert(root, 6, 600);
-
-    tree.printTree(root);
-
-    tree.findAndPrint(root, 3);
-    tree.findAndPrint(root, 6);
-    tree.findAndPrint(root, 7);
-
-    tree.findAndPrintRange(root, 2, 5);
-
-    return 0;
-}
